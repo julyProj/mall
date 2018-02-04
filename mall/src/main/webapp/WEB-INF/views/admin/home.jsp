@@ -3,14 +3,12 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>Admin</title>
 </head>
 <body>
 <h1>
-	Hello world!  
+	Hello Admin!  
 </h1>
-
-<P>  The time on the server is ${serverTime}. </P>
-<a href='../admin/login.html'>로그인 이동</a>
+<a href='login'>로그인 이동</a>
 </body>
 </html>
