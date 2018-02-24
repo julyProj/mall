@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.mall.shop">
+	<logger name="com.mall">
 		<level value="info" />
 	</logger>
 	

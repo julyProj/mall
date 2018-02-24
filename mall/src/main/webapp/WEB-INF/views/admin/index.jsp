@@ -9,22 +9,25 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/resources/admin/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${path}/resources/admin/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="/resources/admin/bootstrap/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="${path}/resources/admin/bootstrap/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/resources/admin/bootstrap/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="${path}/resources/admin/bootstrap/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="/resources/admin/bootstrap/vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="${path}/resources/admin/bootstrap/vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/resources/admin/bootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="${path}/resources/admin/bootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,7 +41,7 @@
 <body>
 
     <div id="wrapper">
-
+<h1>${path}</h1>
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
