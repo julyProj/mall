@@ -23,12 +23,12 @@ public class AdminController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	
-	@RequestMapping(value="login")
-	public String login(Locale locale, Model model) {
-	    logger.info("Admin login page!");
-		
-		return "/admin/login";
-	}
+//	@RequestMapping(value="login")
+//	public String login(Locale locale, Model model) {
+//	    logger.info("Admin login page!");
+//		
+//		return "/admin/login";
+//	}
 	
 	@RequestMapping(value = "index", method = RequestMethod.GET)
 	public String index(Locale locale, Model model) {
