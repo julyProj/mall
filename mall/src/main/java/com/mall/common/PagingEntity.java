@@ -11,6 +11,9 @@ public class PagingEntity {
     }
     public void setPage(int page) {
         this.page = page;
+        
+        this.setStartNum((page*10) -9);
+        this.setEndNum(page*10);
     }
     public int getStartNum() {
         return startNum;
