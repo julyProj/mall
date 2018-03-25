@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.mall.admin.login.mapper.LoginDao;
 import com.mall.admin.login.service.LoginService;
-import com.mall.admin.member.entity.AdminMember;
+import com.mall.admin.member.entity.AdminMemberEntity;
 
 @Controller
 public class LoginController {
@@ -37,7 +37,7 @@ public class LoginController {
 	
 	//로그인 실행
 	@RequestMapping(value="/admin/login", params= "action=login")
-	public ModelAndView login(HttpSession session,ModelAndView mav, AdminMember entity) {
+	public ModelAndView login(HttpSession session,ModelAndView mav, AdminMemberEntity entity) {
 	    logger.info("Admin login Process!");
 	    
 	    String msg = "-";

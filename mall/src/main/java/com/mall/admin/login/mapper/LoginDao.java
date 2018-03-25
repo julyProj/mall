@@ -1,10 +1,10 @@
 package com.mall.admin.login.mapper;
 
-import com.mall.admin.member.entity.AdminMember;
+import com.mall.admin.member.entity.AdminMemberEntity;
 
 public interface LoginDao {
 	
-	public String login(AdminMember entity);
+	public String login(AdminMemberEntity entity);
 	
 	public int test1();
 

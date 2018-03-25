@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 
 import com.mall.admin.login.mapper.LoginDao;
-import com.mall.admin.member.entity.AdminMember;
+import com.mall.admin.member.entity.AdminMemberEntity;
 
 @Service
 public class LoginServiceImpl implements LoginService {
@@ -15,7 +15,7 @@ public class LoginServiceImpl implements LoginService {
 	private LoginDao loginDao;
 
 	@Override
-	public int login(AdminMember entity) {
+	public int login(AdminMemberEntity entity) {
 
 		int result = -1; // sql 조회 , 비밀번호 비교 실패
 

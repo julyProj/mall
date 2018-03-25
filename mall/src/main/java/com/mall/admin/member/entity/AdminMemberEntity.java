@@ -2,7 +2,7 @@ package com.mall.admin.member.entity;
 
 import java.util.Date;
 
-public class AdminMember {
+public class AdminMemberEntity {
 	
 	private int adminSeq;
 	private String adminID;

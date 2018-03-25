@@ -5,7 +5,7 @@
 
 	<cache />
 	
-	<select id="login" parameterType="com.mall.admin.member.entity.AdminMember"
+	<select id="login" parameterType="com.mall.admin.member.entity.AdminMemberEntity"
 		resultType="java.lang.String">
 		select adm_mem_pw
 		from ta_member
