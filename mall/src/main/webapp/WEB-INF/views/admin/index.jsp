@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,25 +11,24 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
-<c:set var="path" value="${pageContext.request.contextPath}"/>
+	<c:set var="path" value="${pageContext.request.contextPath}"/>
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="${path}/resources/admin/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:out value='${path}'/>/resources/admin/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="${path}/resources/admin/bootstrap/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<c:out value='${path}'/>/resources/admin/bootstrap/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="${path}/resources/admin/bootstrap/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<c:out value='${path}'/>/resources/admin/bootstrap/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="${path}/resources/admin/bootstrap/vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="<c:out value='${path}'/>/resources/admin/bootstrap/vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="${path}/resources/admin/bootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<c:out value='${path}'/>/resources/admin/bootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,9 +42,9 @@
 <body>
 
     <div id="wrapper">
-<h1>${path}</h1>
+		<h1 id="headTxt">관리자페이지</h1>
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -919,22 +920,36 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="/resources/admin/bootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="<c:out value='${path}'/>/resources/admin/bootstrap/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="/resources/admin/bootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<c:out value='${path}'/>/resources/admin/bootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="/resources/admin/bootstrap/vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="<c:out value='${path}'/>/resources/admin/bootstrap/vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="/resources/admin/bootstrap/vendor/raphael/raphael.min.js"></script>
-    <script src="/resources/admin/bootstrap/vendor/morrisjs/morris.min.js"></script>
-    <script src="/resources/admin/bootstrap/data/morris-data.js"></script>
+    <script src="<c:out value='${path}'/>/resources/admin/bootstrap/vendor/raphael/raphael.min.js"></script>
+    <script src="<c:out value='${path}'/>/resources/admin/bootstrap/vendor/morrisjs/morris.min.js"></script>
+    <script src="<c:out value='${path}'/>/resources/admin/bootstrap/data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="/resources/admin/bootstrap/dist/js/sb-admin-2.js"></script>
+    <script src="<c:out value='${path}'/>/resources/admin/bootstrap/dist/js/sb-admin-2.js"></script>
 
+	<script type="text/javascript">
+		$(window).on('scroll',function(){
+			var nav = $('.navbar');
+			var height = nav.height() + $('#headTxt').height();
+			console.log($(this).scrollTop() +"////"+ height);
+			if(height < $(this).scrollTop()){
+				nav.removeClass('navbar-default')
+				.addClass('navbar-fixed-top').css('background-color','#f8f8f8');
+			} else {
+				nav.addClass('navbar-default')
+				.removeClass('navbar-fixed-top');
+			}
+		});
+	</script>
 </body>
 
 </html>
