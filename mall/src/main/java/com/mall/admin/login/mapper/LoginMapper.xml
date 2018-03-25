@@ -4,13 +4,14 @@
 <mapper namespace="com.mall.admin.login.mapper.LoginDao">
 
 	<cache />
-	
-	<select id="login" parameterType="com.mall.admin.member.entity.AdminMember"
-		resultType="java.lang.String">
-		select adm_mem_pw
+
+	<select id="test1" resultType="int">
+		select count(*)
 		from ta_member
-		where adm_mem_id = #{adminID}
+
 	</select>
+
+
 
 
 </mapper>
