@@ -1,6 +1,7 @@
 package com.mall.admin.login.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,18 +14,19 @@ import com.mall.admin.login.service.LoginService;
 import com.mall.admin.member.entity.AdminMember;
 
 @Controller
-@RequestMapping("/admin/login")
 public class LoginController {
 	
 	@Inject
 	private LoginService loginService;
+	
+//	@Inject
 //	private LoginDao loginDao;
 
 	private Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
 	
 	//로그인 화면 호출
-	@RequestMapping(value="")
+	@RequestMapping("/admin/login")
 	public ModelAndView index(ModelAndView mav) {
 	    logger.info("Admin login page!");
 	    
@@ -34,39 +36,37 @@ public class LoginController {
 	}
 	
 	//로그인 실행
-	@RequestMapping(params= "action=login")
-	public ModelAndView login(ModelAndView mav, AdminMember entity) {
+	@RequestMapping(value="/admin/login", params= "action=login")
+	public ModelAndView login(HttpSession session,ModelAndView mav, AdminMember entity) {
 	    logger.info("Admin login Process!");
 	    
 	    String msg = "-";
 
-	    String id = entity.getAdminID();
-	   String pwd = entity.getAdminPassword();
-	   
-	    System.out.println(id  +"\n"+ pwd);
-	    
-	    int test = loginService.test1();
+	    int login = loginService.login(entity);
 
-	    System.out.println(test);
-//	    int login = loginService.login(entity);
-//	    
-//	    System.out.println(login);
-//
-//	    
-//	    if(login == 2 ) {
-//	    	msg = "로그인 성공";
-//	    	
-//	    	mav.setViewName("/admin/index");
-//	    }
-//	    else {
-//	    	msg = "로그인 실패";
-//	    	mav.setViewName("redirect:/admin/login");
-//	    }
-//	    
-//	    mav.addObject("msg", msg);
+	    
+	    if(login == 2 ) {
+	    	msg = "로그인 성공";
+	    	session.setAttribute("adminID", entity.getAdminID());
+	    	session.setAttribute("adminPassword", entity.getAdminPassword());
+	    	mav.setViewName("redirect:/admin/index"); 	
+	    }
+	    else {
+	    	msg = "로그인 실패";
+	    	mav.setViewName("/admin/login");
+	    }
+	    
+	    mav.addObject("msg", msg);
 	   
 		
 		return mav;
+	}
+	
+	@RequestMapping("/admin/logout")
+	public String logout( HttpSession session) {
+		loginService.logout(session);
+		
+		return "/admin/login";
 	}
 	
 	
