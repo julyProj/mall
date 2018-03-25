@@ -7,17 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mall.admin.member.mapper.AdminDao;
+import com.mall.admin.member.service.AdminService;
 
 @Controller
 public class AdminController1 {
 	
 	@Inject
-	AdminDao adminDao;
+	AdminDao AdminDao;
 	
 	@RequestMapping("/admin/test")
 	public ModelAndView test(ModelAndView mav) {
 		
-		int count = adminDao.test();
+		int count = AdminDao.test();
 		mav.addObject("testCount", count);
 		mav.setViewName("/admin/test");
 		
