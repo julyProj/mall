@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mall.admin.login.controller.LoginController;
+import com.mall.admin.login.controller.AdminLoginController;
 import com.mall.admin.member.entity.MemberEntity;
 import com.mall.admin.member.service.MemberService;
 
@@ -15,7 +15,7 @@ import com.mall.admin.member.service.MemberService;
 @RequestMapping("member/")
 public class MemberController {
     
-    private Logger logger = LoggerFactory.getLogger(LoginController.class);
+    private Logger logger = LoggerFactory.getLogger(AdminLoginController.class);
  
     @Autowired
     private MemberService memberService;

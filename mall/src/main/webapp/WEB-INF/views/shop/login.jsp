@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin</title>
+    <title>Shop</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/resources/admin/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,17 +39,17 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Admin Please Sign In</h3>
+                        <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="/admin/login" method="post">
+                        <form role="form" action="/shop/login" method="post">
                         <input type="hidden" name="action" value="login" > <%--로그인  액션--%>
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="adminID" name="adminID" type="text" autofocus>
+                                    <input class="form-control" placeholder="memId" name="memId" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="adminPassword" name="adminPassword" type="password" value="">
+                                    <input class="form-control" placeholder="memPw" name="memPw" type="password" value="">
                                 </div>
 <!--                                 <div class="checkbox"> -->
 <!--                                     <label> -->

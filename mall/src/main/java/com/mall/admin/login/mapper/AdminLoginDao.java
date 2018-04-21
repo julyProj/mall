@@ -1,8 +1,11 @@
 package com.mall.admin.login.mapper;
 
+import org.springframework.stereotype.Repository;
+
 import com.mall.admin.member.entity.AdminMemberEntity;
 
-public interface LoginDao {
+@Repository
+public interface AdminLoginDao {
 	
 	public String login(AdminMemberEntity entity);
 	

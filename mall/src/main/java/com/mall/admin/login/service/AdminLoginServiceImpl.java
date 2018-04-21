@@ -5,14 +5,14 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
-import com.mall.admin.login.mapper.LoginDao;
+import com.mall.admin.login.mapper.AdminLoginDao;
 import com.mall.admin.member.entity.AdminMemberEntity;
 
 @Service
-public class LoginServiceImpl implements LoginService {
+public class AdminLoginServiceImpl implements AdminLoginService {
 
 	@Inject
-	private LoginDao loginDao;
+	private AdminLoginDao loginDao;
 
 	@Override
 	public int login(AdminMemberEntity entity) {

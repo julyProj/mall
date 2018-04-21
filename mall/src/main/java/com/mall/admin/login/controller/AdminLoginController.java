@@ -9,20 +9,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mall.admin.login.mapper.LoginDao;
-import com.mall.admin.login.service.LoginService;
+import com.mall.admin.login.service.AdminLoginService;
 import com.mall.admin.member.entity.AdminMemberEntity;
 
 @Controller
-public class LoginController {
+public class AdminLoginController {
 	
 	@Inject
-	private LoginService loginService;
-	
-//	@Inject
-//	private LoginDao loginDao;
+	private AdminLoginService loginService;
 
-	private Logger logger = LoggerFactory.getLogger(LoginController.class);
+	private Logger logger = LoggerFactory.getLogger(AdminLoginController.class);
 	
 	
 	//로그인 화면 호출
