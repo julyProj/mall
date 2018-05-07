@@ -15,7 +15,7 @@ import com.mall.admin.member.service.MemberService;
 @RequestMapping("member/")
 public class MemberController {
     
-    private Logger logger = LoggerFactory.getLogger(AdminLoginController.class);
+    private Logger logger = LoggerFactory.getLogger(MemberController.class);
  
     @Autowired
     private MemberService memberService;
@@ -28,6 +28,6 @@ public class MemberController {
         member.setPage(page);
         
         model.addAttribute("memberList",memberService.getMemberList(member));
-        return "member/list";
+        return "/admin/member/list";
     }
 }
