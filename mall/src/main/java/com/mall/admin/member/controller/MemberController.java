@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.mall.admin.login.controller.AdminLoginController;
 import com.mall.admin.member.entity.MemberEntity;
 import com.mall.admin.member.service.MemberService;
 
@@ -21,13 +21,22 @@ public class MemberController {
     private MemberService memberService;
     
     @RequestMapping("list")
-    public String memManageView(Model model, MemberEntity member){
+    public ModelAndView memManageView(MemberEntity member){
+        ModelAndView mav = new ModelAndView("/admin/member/list");
         logger.info("memberManage LIST Page");
         
         int page = 1;
         member.setPage(page);
         
-        model.addAttribute("memberList",memberService.getMemberList(member));
-        return "/admin/member/list";
+        mav.addObject("memberList", memberService.getMemberList(member));
+        return mav;
+    }
+    
+    @RequestMapping("detail")
+    public ModelAndView memDetailView(MemberEntity member) {
+        ModelAndView mav = new ModelAndView("/admin/member/detail");
+        
+        mav.addObject("memberInfo", memberService.getMember(member));
+        return mav;
     }
 }

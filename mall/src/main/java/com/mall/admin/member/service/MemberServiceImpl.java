@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mall.admin.member.entity.AdminMemberEntity;
@@ -45,5 +44,10 @@ public class MemberServiceImpl implements MemberService {
         List<MemberEntity> returnList = memberMapper.getMemberList(member);
         
         return returnList;
+    }
+
+    @Override
+    public MemberEntity getMember(MemberEntity member) {
+        return memberMapper.getMember(member);
     }
 }
