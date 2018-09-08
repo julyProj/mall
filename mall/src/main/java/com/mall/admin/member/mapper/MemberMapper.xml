@@ -42,4 +42,9 @@
 		FROM tu_member
 		WHERE mem_sq = #{memSq}
 	</select>
+	
+	<select id="getAllMemberCnt" resultType="Integer" >
+		SELECT COUNT(1)
+		FROM tu_member
+	</select>
 </mapper>

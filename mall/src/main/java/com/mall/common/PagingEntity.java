@@ -9,11 +9,11 @@ public class PagingEntity {
     public int getPage() {
         return page;
     }
-    public void setPage(int page) {
+    public void setPage(int page, int size) {
         this.page = page;
         
-        this.setStartNum((page*10) -9);
-        this.setEndNum(page*10);
+        this.setStartNum( (page-1) * size );
+        this.setEndNum(page*size);
     }
     public int getStartNum() {
         return startNum;

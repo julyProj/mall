@@ -1,4 +1,4 @@
-package com.mall.admin.member.service;
+package com.mall.admin.member.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.mall.admin.member.entity.AdminMemberEntity;
 import com.mall.admin.member.entity.MemberEntity;
 import com.mall.admin.member.mapper.MemberDao;
+import com.mall.admin.member.service.MemberService;
 
 /**
  * 사용자 관리 화면 서비스
@@ -46,8 +47,19 @@ public class MemberServiceImpl implements MemberService {
         return returnList;
     }
 
+    /**
+     * 사용자 상세 조회
+     */
     @Override
     public MemberEntity getMember(MemberEntity member) {
         return memberMapper.getMember(member);
+    }
+
+    /**
+     * 사용자 총 인원 조회
+     */
+    @Override
+    public int getAllMemberCnt() {
+        return memberMapper.getAllMemberCnt();
     }
 }

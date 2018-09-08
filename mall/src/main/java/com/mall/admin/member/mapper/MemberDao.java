@@ -12,4 +12,5 @@ public interface MemberDao {
     public List<AdminMemberEntity> getAdminMemberList();
     public List<MemberEntity> getMemberList(MemberEntity member);
     public MemberEntity getMember(MemberEntity member);
+    public int getAllMemberCnt();
 }
